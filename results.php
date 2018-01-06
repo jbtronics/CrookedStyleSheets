@@ -18,13 +18,14 @@ session_start();
     <div class="container">
         <h1>Results</h1>
         <ul>
-            <li>Last visited: <?php print $_SESSION["started"]?></li>
-            <li>Device Type: <?php print $_SESSION["device"]?></li>
-            <li>Link1 (google.de) clicked: <?php print $_SESSION["link1_clicked"] ?></li>
-            <li>Link2 (foo.bar) clicked: <?php print $_SESSION["link2_clicked"]?></li>
-            <li>Link3 (github.com) clicked: <?php print $_SESSION["link3_clicked"]?></li>
-            <li>Orientation: <?php print $_SESSION['orientation']?></li>
-            <li>Resolution: <?php print $_SESSION['width']?>x<?php print $_SESSION['height']?> </li>
+            <li>Last visited: <b><?php print $_SESSION["started"]?></b></li>
+            <li>Device Type: <b><?php print $_SESSION["device"]?></b></li>
+            <li>Link1 (google.de) clicked: <b><?php print $_SESSION["link1_clicked"] ?></b></li>
+            <li>Link2 (foo.bar) clicked: <b><?php print $_SESSION["link2_clicked"]?></b></li>
+            <li>Link3 (github.com) clicked: <b><?php print $_SESSION["link3_clicked"]?></b></li>
+            <li>Orientation: <b><?php print $_SESSION['orientation']?></b></li>
+            <li>Resolution: <b><?php print $_SESSION['width']?>x<?php print $_SESSION['height']?></b> (only often used width are supported and heights are a bit tricky to detect, because only heigth of the browser counts, and it is a bit smaller than the monitor,
+              should be possible, to solve this problem using height intervals, like 1000-1080px => 1080 height)</li>
         </ul>
     </div>
 

@@ -20,13 +20,13 @@ switch($action)
         $_SESSION["device"] = "Screen";
     break;
     case "link1_clicked":
-        $_SESSION["link1_clicked"] = true;
+        $_SESSION["link1_clicked"] = date(DATE_RFC822);
         break;
     case "link2_clicked":
-        $_SESSION["link2_clicked"] = true;
+        $_SESSION["link2_clicked"] = date(DATE_RFC822);
         break;
     case "link3_clicked":
-        $_SESSION["link3_clicked"] = true;
+        $_SESSION["link3_clicked"] = date(DATE_RFC822);
         break;
     case "reset":
         session_unset();
