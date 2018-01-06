@@ -40,6 +40,12 @@ switch($action)
     case "s4_hovered":
         $_SESSION["s4_hovered"] = date(DATE_RFC822);
         break;
+    case "browser_chrome":
+        $_SESSION["browser_chrome"] = true;
+        break;
+    case "browser_firefox":
+        $_SESSION["browser_firefox"] = true;
+        break;
 
     case "reset":
         session_unset();

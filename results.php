@@ -29,6 +29,8 @@ session_start();
             <li>Field 3 hovered: <b><?php print $_SESSION["s3_hovered"]?></b></li>
             <li>Field 4 hovered: <b><?php print $_SESSION["s4_hovered"]?></b></li>
             <li></li>
+            <li>Browser Chrome: <b><?php print $_SESSION['browser_chrome']?></b></li>
+            <li>Browser Firefox: <b><?php print $_SESSION['browser_firefox']?></b></li>
             <li>Orientation: <b><?php print $_SESSION['orientation']?></b></li>
             <li>Resolution: <b><?php print $_SESSION['width']?>x<?php print $_SESSION['height']?></b> (only often used width are supported and heights are a bit tricky to detect, because only heigth of the browser counts, and it is a bit smaller than the monitor,
               should be possible, to solve this problem using height intervals, like 1000-1080px => 1080 height)</li>

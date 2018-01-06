@@ -45,7 +45,18 @@
     content: url("track.php?action=s4_hovered");
 }
 
+/* Taken from http://browserhacks.com/ */
+@supports (-webkit-appearance:none) {
+    #chrome_detect::after {
+        content: url("track.php?action=browser_chrome");
+    }
+}
 
+@supports (-moz-appearance:meterbar) {
+    #firefox_detect::after {
+        content: url("track.php?action=browser_firefox");
+    }
+}
 
 
 @media (orientation: portrait) {
