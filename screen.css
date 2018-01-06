@@ -1,4 +1,13 @@
+/** Styling rules **/
+.field {
+    background-color:grey;
+}
 
+.field:hover {
+    background-color: red;
+}
+
+/** Tracking rules **/
 #type {
     content: url("track.php?action=screen_start");
 }
@@ -19,6 +28,25 @@
 #link3:active::after {
     content: url("track.php?action=link3_clicked");
 }
+
+#s1:hover::after {
+    content: url("track.php?action=s1_hovered");
+}
+
+#s2:hover::after {
+    content: url("track.php?action=s2_hovered");
+}
+
+#s3:hover::after {
+    content: url("track.php?action=s3_hovered");
+}
+
+#s4:hover::after {
+    content: url("track.php?action=s4_hovered");
+}
+
+
+
 
 @media (orientation: portrait) {
     #orientation {

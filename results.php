@@ -23,6 +23,12 @@ session_start();
             <li>Link1 (google.de) clicked: <b><?php print $_SESSION["link1_clicked"] ?></b></li>
             <li>Link2 (foo.bar) clicked: <b><?php print $_SESSION["link2_clicked"]?></b></li>
             <li>Link3 (github.com) clicked: <b><?php print $_SESSION["link3_clicked"]?></b></li>
+            <li></li>
+            <li>Field 1 hovered: <b><?php print $_SESSION["s1_hovered"]?></b></li>
+            <li>Field 2 hovered: <b><?php print $_SESSION["s2_hovered"]?></b></li>
+            <li>Field 3 hovered: <b><?php print $_SESSION["s3_hovered"]?></b></li>
+            <li>Field 4 hovered: <b><?php print $_SESSION["s4_hovered"]?></b></li>
+            <li></li>
             <li>Orientation: <b><?php print $_SESSION['orientation']?></b></li>
             <li>Resolution: <b><?php print $_SESSION['width']?>x<?php print $_SESSION['height']?></b> (only often used width are supported and heights are a bit tricky to detect, because only heigth of the browser counts, and it is a bit smaller than the monitor,
               should be possible, to solve this problem using height intervals, like 1000-1080px => 1080 height)</li>

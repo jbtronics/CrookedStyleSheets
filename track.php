@@ -28,6 +28,19 @@ switch($action)
     case "link3_clicked":
         $_SESSION["link3_clicked"] = date(DATE_RFC822);
         break;
+    case "s1_hovered":
+        $_SESSION["s1_hovered"] = date(DATE_RFC822);
+        break;
+    case "s2_hovered":
+        $_SESSION["s2_hovered"] = date(DATE_RFC822);
+        break;
+    case "s3_hovered":
+        $_SESSION["s3_hovered"] = date(DATE_RFC822);
+        break;
+    case "s4_hovered":
+        $_SESSION["s4_hovered"] = date(DATE_RFC822);
+        break;
+
     case "reset":
         session_unset();
         print("Results were cleared!");
