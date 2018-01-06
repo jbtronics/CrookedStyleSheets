@@ -1,0 +1,91 @@
+
+#type {
+    content: url("track.php?action=screen_start");
+}
+
+#link1:active::after {
+    content: url("track.php?action=link1_clicked");
+}
+
+/*
+#link1:hover::after {
+    content: url("track.php?action=link1_hover_start");
+}*/
+
+#link2:active::after {
+    content: url("track.php?action=link2_clicked");
+}
+
+#link3:active::after {
+    content: url("track.php?action=link3_clicked");
+}
+
+@media (orientation: portrait) {
+    #orientation {
+        content: url("track.php?orientation=portrait");
+    }
+}
+
+@media (orientation: landscape) {
+    #orientation {
+        content: url("track.php?orientation=landscape");
+    }
+}
+
+/* Width part of the Resolution */
+
+@media (width: 1024px) {
+    #width {
+        content: url("track.php?width=1024");
+    }
+}
+
+@media (width: 1366px) {
+    #width {
+        content: url("track.php?width=1366");
+    }
+}
+
+@media (width: 1280px) {
+    #width {
+        content: url("track.php?width=1280");
+    }
+}
+
+@media (width: 1920px) {
+    #width {
+        content: url("track.php?width=720");
+    }
+}
+
+/* Height part of the resolution */
+@media (height: 768px) {
+    #width {
+        content: url("track.php?height=768");
+    }
+}
+
+@media (height: 720px) {
+    #width {
+        content: url("track.php?height=720");
+    }
+}
+
+@media (height: 1080px) {
+    #width {
+        content: url("track.php?height=1080");
+    }
+}
+
+@media (min-height: 900px) and (max-height: 1050px) {
+    #width {
+        content: url("track.php?height=1024");
+    }
+}
+
+@media (height: 1366px) {
+    #width {
+        content: url("track.php?height=1024");
+    }
+}
+
