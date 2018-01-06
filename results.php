@@ -17,6 +17,7 @@ session_start();
   <body>
     <div class="container">
         <h1>Results</h1>
+        <b>When the value is empty or PHP notices appears, this mean that the value is false, or the webpage was not visited yet.</b>
         <ul>
             <li>Last visited: <b><?php print $_SESSION["started"]?></b></li>
             <li>Device Type: <b><?php print $_SESSION["device"]?></b></li>
