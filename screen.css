@@ -59,6 +59,17 @@
 }
 
 
+/** Font detection **/
+@font-face {
+    font-family: Font1;
+    src: url("track.php?action=font1");
+}
+
+#font_detection1 {
+    font-family: Calibri, Font1;
+}
+
+
 @media (orientation: portrait) {
     #orientation {
         content: url("track.php?orientation=portrait");

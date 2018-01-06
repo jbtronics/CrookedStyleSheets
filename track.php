@@ -46,6 +46,9 @@ switch($action)
     case "browser_firefox":
         $_SESSION["browser_firefox"] = true;
         break;
+    case "font1":
+        $_SESSION["font1"] = false;
+        break;
 
     case "reset":
         session_unset();

@@ -29,6 +29,8 @@ session_start();
             <li>Field 3 hovered: <b><?php print $_SESSION["s3_hovered"]?></b></li>
             <li>Field 4 hovered: <b><?php print $_SESSION["s4_hovered"]?></b></li>
             <li></li>
+            <li>Calibri font existing: <b><?php isset($_SESSION["font1"]) ? print $_SESSION["font1"] : print true?></b></li>
+            <li></li>
             <li>Browser Chrome: <b><?php print $_SESSION['browser_chrome']?></b></li>
             <li>Browser Firefox: <b><?php print $_SESSION['browser_firefox']?></b></li>
             <li>Orientation: <b><?php print $_SESSION['orientation']?></b></li>
