@@ -1,4 +1,4 @@
-# Crooked Style Sheeding
+# Crooked Style Sheets
 
 Proof of Concept for Website tracking, only using CSS and no Javascript.
 
