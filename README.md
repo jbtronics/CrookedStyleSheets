@@ -3,7 +3,7 @@
 Proof of Concept for Website tracking, only using CSS and no Javascript.
 
 ## What can we do with this method?
-We can gather some basic information about the user, like the screen resolution and which browser (or engine) is used.
+We can gather some basic information about the user, like the screen resolution (when browser is maximized) and which browser (or engine) is used.
 Further we can detect if a user opens a link or hovers with the mouse over an element. This can be used to track which (external) links a user visits and using the hover method, it should be even possible to track, how the user moved its mouse (using an invisible table of fields in the page background). However using my method, its only possible to track, when a user visits a link the first time or hovers about a field the first time. Maybe it's possible to modify the method, so it is possible to track every click.
 
 Furthermore it is possible to detect, if a user has installed a specific font. Based on this information it should be possible to detect, which OS a users uses (because different OS ships different fonts, e.g. "Calibri" on Windows).
@@ -44,3 +44,7 @@ For font detection, a new font family is defined. Then a text is tried to style 
     font-family: Calibri, Font1;
 }
 ```
+
+## Demo
+[Here]() you can find a demo of the files in this Repo. The index.html is the file that is being tracked using this method, visit the results.php for the results of the tracking. If nothing or a PHP warning appears after a Property, this means that the value of this property is false, or that the user has not visited the page or link yet (Yeah its a bit dirty, but you can see the principle of the method...). 
+Also resolution detection works not so well yet, because I have only detection for the mostly used screen widths. Further it is a bit tricky to detect the real screen height of the user, because CSS uses the height of the browser window and stuff than the Windows' task bar makes the browser area smaller than the monitor.
