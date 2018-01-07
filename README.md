@@ -21,6 +21,26 @@ So we can create a selector in CSS, that calls a particular URL, when the user c
 
 On the server side, a PHP script, save the timestamp, when the URL is called.
 
-Browser detection is based on @supports Media-Query, and we check for some browser specific CSS property like -webkit-appearance.
+Browser detection is based on @supports Media-Query, and we check for some browser specific CSS property like -webkit-appearance:
+
+```CSS
+@supports (-webkit-appearance:none) {
+    #chrome_detect::after {
+        content: url("track.php?action=browser_chrome");
+    }
+}
+```
 
 For font detection, a new font family is defined. Then a text is tried to style with the font that should be checked if it exists. When the browser does not find the font on the user's system, then the defined font is used as a fallback. When this happens, the browser tries to load the font and calls the tracking script on the server.
+
+```CSS
+/** Font detection **/
+@font-face {
+    font-family: Font1;
+    src: url("track.php?action=font1");
+}
+
+#font_detection1 {
+    font-family: Calibri, Font1;
+}
+```
