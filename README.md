@@ -46,5 +46,5 @@ For font detection, a new font family is defined. Then a text is tried to style 
 ```
 
 ## Demo
-[Here]() you can find a demo of the files in this Repo. The index.html is the file that is being tracked using this method, visit the results.php for the results of the tracking. If nothing or a PHP warning appears after a Property, this means that the value of this property is false, or that the user has not visited the page or link yet (Yeah its a bit dirty, but you can see the principle of the method...). 
+[Here](http://crookedss.bplaced.net/) you can find a demo of the files in this Repo. The index.html is the file that is being tracked using this method, visit the results.php for the results of the tracking. If nothing or a PHP warning appears after a Property, this means that the value of this property is false, or that the user has not visited the page or link yet (Yeah its a bit dirty, but you can see the principle of the method...). 
 Also resolution detection works not so well yet, because I have only detection for the mostly used screen widths. Further it is a bit tricky to detect the real screen height of the user, because CSS uses the height of the browser window and stuff than the Windows' task bar makes the browser area smaller than the monitor.
