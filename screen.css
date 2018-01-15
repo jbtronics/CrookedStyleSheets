@@ -58,6 +58,7 @@
     -moz-animation: pulsate 5s infinite;
     -webkit-animation: pulsate 5s infinite;
     animation: pulsate 5s infinite;
+    content: url("track.php?css=1&action=s1_hovered");
 }
 
 #s2:hover::after {
