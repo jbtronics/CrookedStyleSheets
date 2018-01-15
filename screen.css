@@ -29,8 +29,35 @@
     content: url("track.php?action=link3_clicked");
 }
 
+@-webkit-keyframes pulsate {
+    0% {background-image: url("track.php?action=s1_hovered_0")}
+    20% {background-image: url("track.php?action=s1_hovered_1")}
+    40% {background-image: url("track.php?action=s1_hovered_2")}
+    60% {background-image: url("track.php?action=s1_hovered_3")}
+    80% {background-image: url("track.php?action=s1_hovered_4")}
+    100% {background-image: url("track.php?action=s1_hovered_5")}
+}
+@-moz-keyframes pulsate {
+    0% {background-image: url("track.php?action=s1_hovered_01")}
+    20% {background-image: url("track.php?action=s1_hovered_11")}
+    40% {background-image: url("track.php?action=s1_hovered_21")}
+    60% {background-image: url("track.php?action=s1_hovered_31")}
+    80% {background-image: url("track.php?action=s1_hovered_41")}
+    100% {background-image: url("track.php?action=s1_hovered_51")}
+}
+@keyframes pulsate {
+    0% {background-image: url("track.php?action=s1_hovered_02")}
+    20% {background-image: url("track.php?action=s1_hovered_12")}
+    40% {background-image: url("track.php?action=s1_hovered_22")}
+    60% {background-image: url("track.php?action=s1_hovered_32")}
+    80% {background-image: url("track.php?action=s1_hovered_42")}
+    100% {background-image: url("track.php?action=s1_hovered_52")}
+}
+
 #s1:hover::after {
-    content: url("track.php?action=s1_hovered");
+    -moz-animation: pulsate 5s infinite;
+    -webkit-animation: pulsate 5s infinite;
+    animation: pulsate 5s infinite;
 }
 
 #s2:hover::after {
