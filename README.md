@@ -1,4 +1,4 @@
-# Crooked Style Sheeding
+# Crooked Style Sheeting
 
 Proof of concept for website tracking using only CSS and without Javascript.
 
@@ -9,6 +9,7 @@ Further we can detect if a user opens a link or hovers with the mouse over an el
 Furthermore it is possible to detect if a user has installed a specific font. Based on this information it should be possible to detect, which OS a users uses (because different operating systems ship different fonts, e.g. "Calibri" on Windows).
 
 ## How does it work?
+
 In CSS you can add a image from an external resource using the url("foo.bar"); property. Interesting is, that this resource is only loaded when it is needed (for example when a link is clicked).
 
 So we can create a selector in CSS that calls a particular URL when the user clicks a link:
