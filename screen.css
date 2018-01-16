@@ -160,33 +160,144 @@
     }
 }
 
-/* Height part of the resolution */
-@media (device-height: 768px) {
-    #height{
-        content: url("track.php?height=768");
+@media (device-width: 4096px) {
+    #width {
+        content: url("track.php?width=4096");
     }
 }
 
-@media (device-height: 720px) {
+@media (device-width: 3840px) {
+    #width {
+        content: url("track.php?width=3840");
+    }
+}
+
+@media (device-width: 720px) {
+    #width {
+        content: url("track.php?width=720");
+    }
+}
+
+@media (device-width: 640px) {
+    #width {
+        content: url("track.php?width=640");
+    }
+}
+
+@media (device-width: 480px) {
+    #width {
+        content: url("track.php?width=480");
+    }
+}
+
+
+/* Height part of the resolution */
+
+@media (min-device-height: 240px) {
+    #height {
+        content: url("track.php?height=240");
+    }
+}
+
+
+@media (min-device-height: 320px) {
+    #height {
+        content: url("track.php?height=320");
+    }
+}
+
+@media (min-device-height: 360px) {
+    #height {
+        content: url("track.php?height=360");
+    }
+}
+
+@media (min-device-height: 480px) {
+    #height {
+        content: url("track.php?height=480");
+    }
+}
+
+@media (min-device-height: 504px) {
+    #height {
+        content: url("track.php?height=504");
+    }
+}
+
+@media (min-device-height: 540px) {
+    #height {
+        content: url("track.php?height=540");
+    }
+}
+
+@media (min-device-height: 568px) {
+    #height {
+        content: url("track.php?height=568");
+    }
+}
+
+@media (min-device-height: 576px) {
+    #height {
+        content: url("track.php?height=576");
+    }
+}
+
+@media (min-device-height: 600px) {
+    #height {
+        content: url("track.php?height=600");
+    }
+}
+
+@media (min-device-height: 640px) {
+    #height {
+        content: url("track.php?height=640");
+    }
+}
+
+@media (min-device-height: 667px) {
+    #height {
+        content: url("track.php?height=667");
+    }
+}
+
+@media (min-device-height: 690px) {
+    #height {
+        content: url("track.php?height=690");
+    }
+}
+
+@media (min-device-height: 720px) {
     #height {
         content: url("track.php?height=720");
     }
 }
 
-@media (device-height: 1080px) {
+@media (min-device-height: 768px) {
+    #height{
+        content: url("track.php?height=768");
+    }
+}
+
+@media (min-device-height: 1024px) {
+    #height {
+        content: url("track.php?height=1024");
+    }
+}
+
+@media (min-device-height: 1080px) {
     #height {
         content: url("track.php?height=1080");
     }
 }
 
-/* We need this, because only the height of the browser window counts, and the windows bar makes this area smaller */
-@media (min-height: 1000px) and (max-height: 1080px) {
+@media (min-device-height: 2160px) {
     #height {
-        content: url("track.php?height=1080");
+        content: url("track.php?height=2160");
     }
 }
 
-@media (device-height: 1366px) {
+
+@media (min-device-height: 1366px) {
     #height {
         content: url("track.php?height=1366");
     }
