@@ -1,6 +1,6 @@
 # Crooked Style Sheets
 
-Proof of concept for website tracking using only CSS and without Javascript.
+Proof of concept for website tracking/analytics using only CSS and without Javascript.
 
 ## What can we do with this method?
 We can gather some basic information about the user, like the screen resolution (when the browser is maximized) and which browser (or engine) is used.
@@ -86,3 +86,11 @@ The resoultion of the duration measurement can be increased, by insert more step
 If nothing, or a PHP warning appears after a property, means that the value of this property is false, or that the user has not visited the page or link yet (Yeah, it's a bit dirty, but you can see the principle of the method). 
 
 Also, resolution detection doesn't work so well yet, because I only have detection for the most used screen widths. Further, it is a bit tricky to detect the real screen height of the user, because CSS uses the height of the browser window and stuff than the Windows' task bar makes the browser area smaller than the monitor.
+
+## What can you do to prevent tracking via this method?
+The only way that is known to me currently is, to disable CSS for a webpage completly (you can do this with a plugin like uMatrix). The problem that almost every modern webpage looks very ugly without CSS and is sometimes even unusable completly. So disable CSS is not a real option, except when you are very worried about your privacy (for example, when you are using Tor browser, you should maybe disable CSS).
+
+A better solution would be, that browsers does not load the external content (referenced in CSS), when it is needed, but when the site is loaded. Then it would be impossible to detect single actions. This modification to content loading could be implemented by the browsers itself, or maybe by a plugin (similar to NoScript or uMatrix)
+
+The problem is that this maybe have a performance impact, because the browser has to load much content on inital site loading and maybe will not be using some of the content even once.
+
