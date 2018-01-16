@@ -51,6 +51,9 @@ switch($action)
     case "font1":
         $_SESSION["font1"] = false;
         break;
+    case "text_input":
+        $_SESSION["text_input"] = date(DATE_RFC822);
+        break;
 
     case "reset":
         session_unset();

@@ -110,6 +110,15 @@
 }
 
 
+/** input tests */
+#text_input:valid {
+    background: green;
+    background-image: url("track.php?action=text_input");
+}
+
+
+/** Orientation detection **/
+
 @media (orientation: portrait) {
     #orientation {
         content: url("track.php?orientation=portrait");
