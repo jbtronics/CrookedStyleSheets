@@ -80,6 +80,28 @@ Then we define that the keyframes should be used as animation for the div. There
 
 The resoultion of the duration measurement can be increased, by insert more steps into the keyframes set.
 
+### Input detection
+To detect if a user checks a checkbox we use the :selected Selector provided by CSS:
+```CSS
+#checkbox:checked {
+    content: url("track.php?action=checkbox");
+} 
+```
+
+For detection of the string "test" we combine the HTML pattern attribute, that can be used to build some basic input validation. In combination with the :valid selector, the browser will request our tracking site, when the pattern regex is matched by input:
+
+```HTML
+<input type="text" id="text_input" pattern="^test$" required>
+```
+
+``` CSS
+#text_input:valid {
+    background: green;
+    background-image: url("track.php?action=text_input");
+}
+``` 
+
+
 ## Demo
 [Here](http://crookedss.bplaced.net/) you can find a demo of the files in this repository. The `index.html` is the file that is being tracked using this method. Visit the `results.php` for the results of the tracking. 
 
@@ -92,5 +114,5 @@ The only way that is known to me currently is, to disable CSS for a webpage comp
 
 A better solution would be, that browsers does not load the external content (referenced in CSS), when it is needed, but when the site is loaded. Then it would be impossible to detect single actions. This modification to content loading could be implemented by the browsers itself, or maybe by a plugin (similar to NoScript or uMatrix)
 
-The problem is that this maybe have a performance impact, because the browser has to load much content on inital site loading and maybe will not be using some of the content even once.
+The problem is that this solution maybe have a performance impact, because the browser has to load much content on inital site loading (and maybe the browser will not use the content at all).
 
