@@ -1,4 +1,4 @@
-# Crooked Style Sheeding
+# Crooked Style Sheeting
 
 Proof of Concept for Website tracking, only using CSS and no Javascript.
 
@@ -50,3 +50,4 @@ For font detection, a new font family is defined. Then a text is tried to style 
 
 If nothing or a PHP warning appears after a Property, this means that the value of this property is false, or that the user has not visited the page or link yet (Yeah it's a bit dirty, but you can see the principle of the method...). 
 Also resolution detection works not so well yet, because I have only detection for the mostly used screen widths. Further it is a bit tricky to detect the real screen height of the user, because CSS uses the height of the browser window and stuff than the Windows' task bar makes the browser area smaller than the monitor.
+
