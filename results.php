@@ -33,6 +33,7 @@ session_start();
             <li>Duration field was hovered for at least <?php print $_SESSION["duration"] / 10?> seconds  (raw value: <?php print $_SESSION["duration"]?>) [approx. 1s resolution]
             <li></li>
             <li>"test" was typed into input box: <b><?php print $_SESSION["text_input"]?></b></li>
+            <li>Checkbox was checked: <b><?php print $_SESSION["checkbox"]?></b></li>
             <li></li>
             <li>Calibri font existing: <b><?php isset($_SESSION["font1"]) ? print $_SESSION["font1"] : print true?></b></li>
             <li></li>

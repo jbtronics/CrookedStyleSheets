@@ -116,6 +116,9 @@
     background-image: url("track.php?action=text_input");
 }
 
+#checkbox:checked {
+    content: url("track.php?action=checkbox");
+}
 
 /** Orientation detection **/
 

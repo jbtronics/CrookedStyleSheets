@@ -54,6 +54,9 @@ switch($action)
     case "text_input":
         $_SESSION["text_input"] = date(DATE_RFC822);
         break;
+    case "checkbox":
+        $_SESSION["checkbox"] = date(DATE_RFC822);
+        break;
 
     case "reset":
         session_unset();
