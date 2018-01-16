@@ -47,10 +47,15 @@
 }
 @keyframes pulsate {
     0% {background-image: url("track.php?duration=00")}
+    10% {background-image: url("track.php?duration=10")}
     20% {background-image: url("track.php?duration=20")}
+    30% {background-image: url("track.php?duration=30")}
     40% {background-image: url("track.php?duration=40")}
+    50% {background-image: url("track.php?duration=50")}
     60% {background-image: url("track.php?duration=60")}
+    70% {background-image: url("track.php?duration=70")}
     80% {background-image: url("track.php?duration=80")}
+    90% {background-image: url("track.php?duration=90")}
     100% {background-image: url("track.php?duration=100")}
 }
 
@@ -60,6 +65,7 @@
     /*animation: pulsate 5s infinite;*/
     animation-name: pulsate;
     animation-duration: 10s;
+    animation-iteration-count: infinite;
     content: url("track.php?duration=-1");
 }
 
