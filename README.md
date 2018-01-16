@@ -46,6 +46,19 @@ For font detection a new font family is defined. Then a text is tried to style w
 }
 ```
 
+For hover duration method, we define new animation keyframes, that will request a url, every time a new keyframe is requested:
+
+```CSS
+keyframes pulsate {
+    0% {background-image: url("track.php?duration=00")}
+    20% {background-image: url("track.php?duration=20")}
+    40% {background-image: url("track.php?duration=40")}
+    60% {background-image: url("track.php?duration=60")}
+    80% {background-image: url("track.php?duration=80")}
+    100% {background-image: url("track.php?duration=100")}
+}
+```
+
 ## Demo
 [Here](http://crookedss.bplaced.net/) you can find a demo of the files in this repository. The `index.html` is the file that is being tracked using this method. Visit the `results.php` for the results of the tracking. 
 

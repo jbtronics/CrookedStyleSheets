@@ -30,6 +30,8 @@ session_start();
             <li>Field 3 hovered: <b><?php print $_SESSION["s3_hovered"]?></b></li>
             <li>Field 4 hovered: <b><?php print $_SESSION["s4_hovered"]?></b></li>
             <li></li>
+            <li>Duration field was hovered for at least <?php print $_SESSION["duration"] / 10?> seconds  (raw value: <?php print $_SESSION["duration"]?>) [approx. 2s resolution]
+            <li></li>
             <li>Calibri font existing: <b><?php isset($_SESSION["font1"]) ? print $_SESSION["font1"] : print true?></b></li>
             <li></li>
             <li>Browser Chrome: <b><?php print $_SESSION['browser_chrome']?></b></li>
