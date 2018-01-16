@@ -12,6 +12,8 @@ if(!empty($_REQUEST['width']))
 if(!empty($_REQUEST['height']))
     $_SESSION['height'] = $_REQUEST['height'];
 
+if(!empty($_REQUEST['duration']))
+    $_SESSION['duration'] = $_REQUEST['duration'];
 
 switch($action)
 {
