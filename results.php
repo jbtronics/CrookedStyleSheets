@@ -30,7 +30,7 @@ session_start();
             <li>Field 3 hovered: <b><?php print $_SESSION["s3_hovered"]?></b></li>
             <li>Field 4 hovered: <b><?php print $_SESSION["s4_hovered"]?></b></li>
             <li></li>
-            <li>Duration field was hovered for at least <?php print $_SESSION["duration"] / 10?> seconds  (raw value: <?php print $_SESSION["duration"]?>) [approx. 1s resolution]
+            <li>Duration field was hovered for at least <b> <?php print $_SESSION["duration"] / 10?></b> seconds  (raw value: <?php print $_SESSION["duration"]?>) [approx. 1s resolution]
             <li></li>
             <li>"test" was typed into input box: <b><?php print $_SESSION["text_input"]?></b></li>
             <li>Checkbox was checked: <b><?php print $_SESSION["checkbox"]?></b></li>
