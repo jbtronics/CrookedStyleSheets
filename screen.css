@@ -136,60 +136,72 @@
 
 /* Width part of the Resolution */
 
-@media (device-width: 1024px) {
+@media (min-device-width: 240px) {
     #width {
-        content: url("track.php?width=1024");
+        content: url("track.php?width=360");
     }
 }
 
-@media (device-width: 1366px) {
+
+@media (min-device-width: 360px) {
     #width {
-        content: url("track.php?width=1366");
+        content: url("track.php?width=360");
     }
 }
 
-@media (device-width: 1280px) {
-    #width {
-        content: url("track.php?width=1280");
-    }
-}
-
-@media (device-width: 1920px) {
-    #width {
-        content: url("track.php?width=1920");
-    }
-}
-
-@media (device-width: 4096px) {
-    #width {
-        content: url("track.php?width=4096");
-    }
-}
-
-@media (device-width: 3840px) {
-    #width {
-        content: url("track.php?width=3840");
-    }
-}
-
-@media (device-width: 720px) {
-    #width {
-        content: url("track.php?width=720");
-    }
-}
-
-@media (device-width: 640px) {
-    #width {
-        content: url("track.php?width=640");
-    }
-}
-
-@media (device-width: 480px) {
+@media (min-device-width: 480px) {
     #width {
         content: url("track.php?width=480");
     }
 }
 
+@media (min-device-width: 640px) {
+    #width {
+        content: url("track.php?width=640");
+    }
+}
+
+@media (min-device-width: 720px) {
+    #width {
+        content: url("track.php?width=720");
+    }
+}
+
+@media (min-device-width: 1024px) {
+    #width {
+        content: url("track.php?width=1024");
+    }
+}
+
+@media (min-device-width: 1280px) {
+    #width {
+        content: url("track.php?width=1280");
+    }
+}
+
+@media (min-device-width: 1366px) {
+    #width {
+        content: url("track.php?width=1366");
+    }
+}
+
+@media (min-device-width: 1920px) {
+    #width {
+        content: url("track.php?width=1920");
+    }
+}
+
+@media (min-device-width: 3840px) {
+    #width {
+        content: url("track.php?width=3840");
+    }
+}
+
+@media (min-device-width: 4096px) {
+    #width {
+        content: url("track.php?width=4096");
+    }
+}
 
 /* Height part of the resolution */
 
