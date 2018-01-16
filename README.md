@@ -10,6 +10,8 @@ Furthermore it is possible to detect if a user has installed a specific font. Ba
 
 ## How does it work?
 
+### General idea
+
 In CSS you can add a image from an external resource using the url("foo.bar"); property. Interesting is, that this resource is only loaded when it is needed (for example when a link is clicked).
 
 So we can create a selector in CSS that calls a particular URL when the user clicks a link:
@@ -22,6 +24,8 @@ So we can create a selector in CSS that calls a particular URL when the user cli
 
 On the server side a PHP script saves the timestamp when the URL is called.
 
+### Browser detection
+
 Browser detection is based on `@supports Media-Query`, and we check for some browser specific CSS property like `-webkit-appearance`:
 
 ```CSS
@@ -31,6 +35,8 @@ Browser detection is based on `@supports Media-Query`, and we check for some bro
     }
 }
 ```
+
+### Font detection
 
 For font detection a new font family is defined. Then a text is tried to style with the font that should be checked if it exists. When the browser does not find the font on the user's system the defined font is used as a fallback. When this happens the browser tries to load the font and calls the tracking script on the server.
 
@@ -46,10 +52,12 @@ For font detection a new font family is defined. Then a text is tried to style w
 }
 ```
 
-For hover duration method, we define new animation keyframes, that will request a url, every time a new keyframe is requested:
+### Measurement of hover duration
+
+For hover duration method (based on an idea by jeyroik), we define new animation keyframes, that will request a url, every time a new keyframe is requested:
 
 ```CSS
-keyframes pulsate {
+@keyframes pulsate {
     0% {background-image: url("track.php?duration=00")}
     20% {background-image: url("track.php?duration=20")}
     40% {background-image: url("track.php?duration=40")}
@@ -58,6 +66,19 @@ keyframes pulsate {
     100% {background-image: url("track.php?duration=100")}
 }
 ```
+Then we define that the keyframes should be used as animation for the div. There can we choose the duration of the animation, which is the maximum time we can measure:
+```CSS
+#duration:hover::after {
+    -moz-animation: pulsate 5s infinite;
+    -webkit-animation: pulsate 5s infinite;
+    /*animation: pulsate 5s infinite;*/
+    animation-name: pulsate;
+    animation-duration: 10s;
+    content: url("track.php?duration=-1");
+}
+```
+
+The resoultion of the duration measurement can be increased, by insert more steps into the keyframes set.
 
 ## Demo
 [Here](http://crookedss.bplaced.net/) you can find a demo of the files in this repository. The `index.html` is the file that is being tracked using this method. Visit the `results.php` for the results of the tracking. 
