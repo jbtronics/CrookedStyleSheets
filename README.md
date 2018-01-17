@@ -4,13 +4,14 @@
 
 Proof of concept for website tracking/analytics using only CSS and without Javascript.
 
-## What can we do with this method?
+## What can we do with this method
+
 We can gather some basic information about the user, like the screen resolution (when the browser is maximized) and which browser (or engine) is used.
 Further we can detect if a user clicks a link or is hovering with the mouse over an element. This can be used to track which (external) links a user visits and using the hover method. It should be even possible to track how the user moved their mouse (using an invisible table of fields in the page background). However, using my method it's only possible to track when a user visits a link the first time or hovers over a field the first time. Maybe it's possible to modify the method so that it is possible to track every click.
 
 Furthermore it is possible to detect if a user has installed a specific font. Based on this information it should be possible to detect, which OS a users uses (because different operating systems ship different fonts, e.g. "Calibri" on Windows).
 
-## How does it work?
+## How does it work
 
 ### General idea
 
@@ -68,7 +69,9 @@ For hover duration method (based on an idea by jeyroik), we define new animation
     100% {background-image: url("track.php?duration=100")}
 }
 ```
+
 Then we define that the keyframes should be used as animation for the div. There can we choose the duration of the animation, which is the maximum time we can measure:
+
 ```CSS
 #duration:hover::after {
     -moz-animation: pulsate 5s infinite;
@@ -80,14 +83,16 @@ Then we define that the keyframes should be used as animation for the div. There
 }
 ```
 
-The resoultion of the duration measurement can be increased, by insert more steps into the keyframes set.
+The resolution of the duration measurement can be increased, by insert more steps into the keyframes set.
 
 ### Input detection
+
 To detect if a user checks a checkbox we use the :selected Selector provided by CSS:
+
 ```CSS
 #checkbox:checked {
     content: url("track.php?action=checkbox");
-} 
+}
 ```
 
 For detection of the string "test" we combine the HTML pattern attribute, that can be used to build some basic input validation. In combination with the :valid selector, the browser will request our tracking site, when the pattern regex is matched by input:
@@ -101,20 +106,20 @@ For detection of the string "test" we combine the HTML pattern attribute, that c
     background: green;
     background-image: url("track.php?action=text_input");
 }
-``` 
-
+```
 
 ## Demo
-[Here](http://crookedss.bplaced.net/) you can find a demo of the files in this repository. The `index.html` is the file that is being tracked using this method. Visit the `results.php` for the results of the tracking. 
 
-If nothing, or a PHP warning appears after a property, means that the value of this property is false, or that the user has not visited the page or link yet (Yeah, it's a bit dirty, but you can see the principle of the method). 
+[Here](http://crookedss.bplaced.net/) you can find a demo of the files in this repository. The `index.html` is the file that is being tracked using this method. Visit the `results.php` for the results of the tracking.
+
+If nothing, or a PHP warning appears after a property, means that the value of this property is false, or that the user has not visited the page or link yet (Yeah, it's a bit dirty, but you can see the principle of the method).
 
 Also, resolution detection doesn't work so well yet, because I only have detection for the most used screen widths. Further, it is a bit tricky to detect the real screen height of the user, because CSS uses the height of the browser window and stuff than the Windows' task bar makes the browser area smaller than the monitor.
 
-## What can you do to prevent tracking via this method?
+## What can you do to prevent tracking via this method
+
 The only way that is known to me currently is, to disable CSS for a webpage completely (you can do this with a plugin like uMatrix). The problem that almost every modern webpage looks very ugly without CSS and is sometimes even unusable completely. So disable CSS is not a real option, except when you are very worried about your privacy (for example, when you are using Tor browser, you should maybe disable CSS).
 
 A better solution would be, that browsers does not load the external content (referenced in CSS), when it is needed, but when the site is loaded. Then it would be impossible to detect single actions. This modification to content loading could be implemented by the browsers itself, or maybe by a plugin (similar to NoScript or uMatrix)
 
 The problem is that this solution maybe have a performance impact, because the browser has to load a lot of content on initial site loading (and maybe the browser will not use the content at all).
-
