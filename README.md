@@ -1,25 +1,26 @@
-**[Here](http://crookedss.bplaced.net/) you can find a demo of the code in this repo.**
+**[Here](http://crookedss.bplaced.net/) you can find a demo of the code in this repository.**
 
 # Crooked Style Sheets
 
 Proof of concept for website tracking/analytics using only CSS and without JavaScript.
 
-## What can we do with this method
+## What we can do with this method
 
 We can gather some basic information about the user, like the screen resolution (when the browser is maximized) and which browser (or engine) is used.
-Further we can detect if a user clicks a link or is hovering with the mouse over an element. This can be used to track which (external) links a user visits and using the hover method. It should be even possible to track how the user moved their mouse (using an invisible table of fields in the page background). However, using my method it's only possible to track when a user visits a link the first time or hovers over a field the first time. Maybe it's possible to modify the method so that it is possible to track every click.
 
-Furthermore, it is possible to detect if a user has installed a specific font. Based on this information it should be possible to detect, which OS an user uses (because different operating systems ship different fonts, e.g. "Calibri" on Windows).
+Further, we can detect if a user clicks a link or hovers with the mouse over an element. This can be used to track which (external) links a user visits using the hover method. It should even be possible to track how the user moved their mouse (using an invisible table of fields in the page background). However, using my method it's only possible to track when a user visits a link or hovers over a field for the first time. Maybe it's possible to modify the method so that it is possible to track every click.
 
-## How does it work
+Furthermore, it is possible to detect if a user has installed a specific font. Based on this information, it should be possible to detect the user's OS, because different operating systems ship different fonts, such as "Calibri" on Windows.
+
+## How it works
 
 ### General idea
 
-In CSS you can add a image from an external resource using the url("foo.bar"); property. Interesting is, that this resource is only loaded when it is needed (for example when a link is clicked).
+In CSS you can add an image from an external resource using the `url("foo.bar");` property. Interestingly, this resource is only loaded when it's needed (for example, when a link is clicked).
 
 So, we can create a selector in CSS that calls a particular URL when the user clicks a link:
 
-```CSS
+```css
 #link2:active::after {
     content: url("track.php?action=link2_clicked");
 }
@@ -31,7 +32,7 @@ On the server side a PHP script saves the timestamp when the URL is called.
 
 Browser detection is based on `@supports Media-Query`, and we check for some browser specific CSS property like `-webkit-appearance`:
 
-```CSS
+```css
 @supports (-webkit-appearance:none) {
     #chrome_detect::after {
         content: url("track.php?action=browser_chrome");
@@ -41,9 +42,9 @@ Browser detection is based on `@supports Media-Query`, and we check for some bro
 
 ### Font detection
 
-For font detection a new font family is defined. Then a text is tried to style with the font that should be checked if it exists. When the browser does not find the font on the user's system the defined font is used as a fallback. When this happens, the browser tries to load the font and calls the tracking script on the server.
+For font detection a new font family is defined. Then, a text is tried to style with the font that should be checked if it exists. When the browser does not find the font on the user's system, the defined font is used as a fallback. When this happens, the browser tries to load the font and calls the tracking script on the server.
 
-```CSS
+```css
 /** Font detection **/
 @font-face {
     font-family: Font1;
@@ -57,9 +58,9 @@ For font detection a new font family is defined. Then a text is tried to style w
 
 ### Measurement of hover duration
 
-For hover duration method (based on an idea by jeyroik), we define new animation keyframes, that will request a url, every time a new keyframe is requested:
+For hover duration method (based on an idea by [jeyroik](https://github.com/jeyroik)), we define new animation keyframes that will request a URL every time a new keyframe is requested:
 
-```CSS
+```css
 @keyframes pulsate {
     0% {background-image: url("track.php?duration=00")}
     20% {background-image: url("track.php?duration=20")}
@@ -70,9 +71,9 @@ For hover duration method (based on an idea by jeyroik), we define new animation
 }
 ```
 
-Then we define that the keyframes should be used as animation for the div. There can we choose the duration of the animation, which is the maximum time we can measure:
+Then, we define that the keyframes should be used as animation for the `div`. There can we choose the duration of the animation, which is the maximum time we can measure:
 
-```CSS
+```css
 #duration:hover::after {
     -moz-animation: pulsate 5s infinite;
     -webkit-animation: pulsate 5s infinite;
@@ -87,21 +88,21 @@ The resolution of the duration measurement can be increased, by insert more step
 
 ### Input detection
 
-To detect if a user checks a checkbox we use the :selected Selector provided by CSS:
+To detect if a user checks a checkbox we use the `:selected` Selector provided by CSS:
 
-```CSS
+```css
 #checkbox:checked {
     content: url("track.php?action=checkbox");
 }
 ```
 
-For detection of the string "test" we combine the HTML pattern attribute, that can be used to build some basic input validation. In combination with the :valid selector, the browser will request our tracking site, when the pattern regex is matched by input:
+For detection of the string "test" we combine the HTML `pattern` attribute, which can be used to build some basic input validation. In combination with the `:valid` selector, the browser will request our tracking site when the regex pattern is matched by the input:
 
-```HTML
+```html
 <input type="text" id="text_input" pattern="^test$" required>
 ```
 
-``` CSS
+```css
 #text_input:valid {
     background: green;
     background-image: url("track.php?action=text_input");
@@ -112,14 +113,14 @@ For detection of the string "test" we combine the HTML pattern attribute, that c
 
 [Here](http://crookedss.bplaced.net/) you can find a demo of the files in this repository. The `index.html` is the file that is being tracked using this method. Visit the `results.php` for the results of the tracking.
 
-If nothing, or a PHP warning appears after a property, means that the value of this property is false, or that the user has not visited the page or link yet (Yeah, it's a bit dirty, but you can see the principle of the method).
+If nothing or a PHP warning appears after a property, it means that the value of this property is false, or that the user has not visited the page or link yet (yeah, it's a bit dirty, but you can see the principle of the method).
 
-Also, resolution detection doesn't work so well yet, because I only have detection for the most used screen widths. Further, it is a bit tricky to detect the real screen height of the user, because CSS uses the height of the browser window and stuff than the Windows' task bar makes the browser area smaller than the monitor.
+Also, resolution detection doesn't work so well yet, because I only have detection for the most used screen widths. Further, it is a bit tricky to detect the real screen height of the user, because CSS uses the height of the browser window and stuff like the system panel/task bar makes the browser area smaller than the monitor.
 
-## What can you do to prevent tracking via this method
+## What you can do to prevent tracking with this method
 
-The only way that is known to me currently is, to disable CSS for a webpage completely (you can do this with a plugin like uMatrix). The problem that almost every modern webpage looks very ugly without CSS and is sometimes even unusable completely. So, disable CSS is not a real option, except when you are very worried about your privacy (for example, when you are using Tor browser, you should maybe disable CSS).
+The only way that is known to me currently, is to disable CSS for a web page completely (you can do this with a plugin like [uMatrix](https://github.com/gorhill/uMatrix)). The problem is that almost every modern web page looks very ugly without CSS and is sometimes even unusable. So, disabling CSS is not a real option, except when you are very worried about your privacy (for example, when you are using the Tor browser, you should maybe disable CSS).
 
-A better solution would be, that browsers does not load the external content (referenced in CSS), when it is needed, but when the site is loaded. Then it would be impossible to detect single actions. This modification to content loading could be implemented by the browsers itself, or maybe by a plugin (similar to NoScript or uMatrix)
+A better solution would be if browsers didn't load the external content (referenced in CSS) when it;s needed, but when the site is loaded. Then it would be impossible to detect individual actions. This modification to content loading could be implemented by the browsers itself, or maybe by a plugin (similar to [NoScript](https://noscript.net/) or uMatrix)
 
-The problem is that this solution maybe has a performance impact, because the browser has to load a lot of content on initial site loading (and maybe the browser will not use the content at all).
+The problem is that this solution might have an impact on performance, because the browser has to load a lot of content on initial site loading (and the browser might not use the content at all).

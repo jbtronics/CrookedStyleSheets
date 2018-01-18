@@ -17,7 +17,7 @@ session_start();
   <body>
     <div class="container">
         <h1>Results</h1>
-        <b>When the value is empty, or PHP notices appears, this mean that the value is false, or the webpage was not visited yet.</b>
+        <b>When the value is empty or PHP notices appears, it means that the value is false or the webpage hasn't been visited yet.</b>
         <ul>
             <li>Last visited: <b><?php print $_SESSION["started"]?></b></li>
             <li>Device Type: <b><?php print $_SESSION["device"]?></b></li>
@@ -40,7 +40,7 @@ session_start();
             <li>Browser Chrome: <b><?php print $_SESSION['browser_chrome']?></b></li>
             <li>Browser Firefox: <b><?php print $_SESSION['browser_firefox']?></b></li>
             <li>Orientation: <b><?php print $_SESSION['orientation']?></b></li>
-            <li>Resolution: <b><?php print $_SESSION['width']?>x<?php print $_SESSION['height']?></b> (only often used width are supported, your screen resolution is greater or equal than shown.)</li>
+            <li>Resolution: <b><?php print $_SESSION['width']?>x<?php print $_SESSION['height']?></b> (only often used widths are supported, your screen resolution is greater than or equal to shown resolution.)</li>
         </ul>
     </div>
 
