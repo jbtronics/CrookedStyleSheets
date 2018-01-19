@@ -86,7 +86,7 @@
 }
 
 /* Taken from http://browserhacks.com/ */
-@supports (-webkit-appearance:none) {
+@supports (-webkit-appearance:none) and (not (-ms-ime-align:auto)){
     #chrome_detect::after {
         content: url("track.php?action=browser_chrome");
     }
@@ -98,6 +98,12 @@
     }
 }
 
+/* Taken from https://browserstrangeness.github.io/css_hacks.html */
+@supports (-ms-ime-align:auto) {
+    #edge_detect::after {
+        content: url("track.php?action=browser_edge")
+    }
+}
 
 /** Font detection **/
 @font-face {

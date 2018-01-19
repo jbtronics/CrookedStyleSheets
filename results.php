@@ -39,6 +39,7 @@ session_start();
             <li></li>
             <li>Browser Chrome: <b><?php print $_SESSION['browser_chrome']?></b></li>
             <li>Browser Firefox: <b><?php print $_SESSION['browser_firefox']?></b></li>
+            <li>Browser Edge: <b><?php print $_SESSION['browser_edge']?></b></li>
             <li>Orientation: <b><?php print $_SESSION['orientation']?></b></li>
             <li>Resolution: <b><?php print $_SESSION['width']?>x<?php print $_SESSION['height']?></b> (only often used widths are supported, your screen resolution is greater than or equal to shown resolution.)</li>
         </ul>
