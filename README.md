@@ -35,7 +35,7 @@ On the server side a PHP script saves the timestamp when the URL is called.
 Browser detection is based on `@supports Media-Query`, and we check for some browser specific CSS property like `-webkit-appearance`:
 
 ```css
-@supports (-webkit-appearance:none) {
+@supports (-webkit-appearance:none) and (not (-ms-ime-align:auto)){
     #chrome_detect::after {
         content: url("track.php?action=browser_chrome");
     }
@@ -123,6 +123,6 @@ Also, resolution detection doesn't work so well yet, because I only have detecti
 
 The only way that is known to me currently, is to disable CSS for a web page completely (you can do this with a plugin like [uMatrix](https://github.com/gorhill/uMatrix)). The problem is that almost every modern web page looks very ugly without CSS and is sometimes even unusable. So, disabling CSS is not a real option, except when you are very worried about your privacy (for example, when you are using the Tor browser, you should maybe disable CSS).
 
-A better solution would be if browsers didn't load the external content (referenced in CSS) when it;s needed, but when the site is loaded. Then it would be impossible to detect individual actions. This modification to content loading could be implemented by the browsers itself, or maybe by a plugin (similar to [NoScript](https://noscript.net/) or uMatrix)
+A better solution would be if browsers didn't load the external content (referenced in CSS) when it´s needed, but when the site is loaded. Then it would be impossible to detect individual actions. This modification to content loading could be implemented by the browsers itself, or maybe by a plugin (similar to [NoScript](https://noscript.net/) or uMatrix)
 
 The problem is that this solution might have an impact on performance, because the browser has to load a lot of content on initial site loading (and the browser might not use the content at all).
