@@ -8,7 +8,7 @@
 }
 
 /** Tracking rules **/
-#type {
+#type::after {
     content: url("track.php?action=screen_start");
 }
 
@@ -62,6 +62,7 @@
 #duration:hover::after {
     -moz-animation: pulsate 5s infinite;
     -webkit-animation: pulsate 5s infinite;
+    animation: pulsate 5s infinite;
     /*animation: pulsate 5s infinite;*/
     animation-name: pulsate;
     animation-duration: 10s;
@@ -86,7 +87,7 @@
 }
 
 /* Taken from http://browserhacks.com/ */
-@supports (-webkit-appearance:none) {
+@supports (-webkit-appearance:none) and (not (-ms-ime-align:auto)){
     #chrome_detect::after {
         content: url("track.php?action=browser_chrome");
     }
@@ -98,6 +99,12 @@
     }
 }
 
+/* Taken from https://browserstrangeness.github.io/css_hacks.html */
+@supports (-ms-ime-align:auto) {
+    #edge_detect::after {
+        content: url("track.php?action=browser_edge")
+    }
+}
 
 /** Font detection **/
 @font-face {
@@ -123,13 +130,13 @@
 /** Orientation detection **/
 
 @media (orientation: portrait) {
-    #orientation {
+    #orientation::after {
         content: url("track.php?orientation=portrait");
     }
 }
 
 @media (orientation: landscape) {
-    #orientation {
+    #orientation::after {
         content: url("track.php?orientation=landscape");
     }
 }
@@ -137,68 +144,68 @@
 /* Width part of the Resolution */
 
 @media (min-device-width: 240px) {
-    #width {
+    #width::after {
         content: url("track.php?width=360");
     }
 }
 
 
 @media (min-device-width: 360px) {
-    #width {
+    #width::after {
         content: url("track.php?width=360");
     }
 }
 
 @media (min-device-width: 480px) {
-    #width {
+    #width::after {
         content: url("track.php?width=480");
     }
 }
 
 @media (min-device-width: 640px) {
-    #width {
+    #width::after {
         content: url("track.php?width=640");
     }
 }
 
 @media (min-device-width: 720px) {
-    #width {
+    #width::after {
         content: url("track.php?width=720");
     }
 }
 
 @media (min-device-width: 1024px) {
-    #width {
+    #width::after {
         content: url("track.php?width=1024");
     }
 }
 
 @media (min-device-width: 1280px) {
-    #width {
+    #width::after {
         content: url("track.php?width=1280");
     }
 }
 
 @media (min-device-width: 1366px) {
-    #width {
+    #width::after {
         content: url("track.php?width=1366");
     }
 }
 
 @media (min-device-width: 1920px) {
-    #width {
+    #width::after {
         content: url("track.php?width=1920");
     }
 }
 
 @media (min-device-width: 3840px) {
-    #width {
+    #width::after {
         content: url("track.php?width=3840");
     }
 }
 
 @media (min-device-width: 4096px) {
-    #width {
+    #width::after {
         content: url("track.php?width=4096");
     }
 }
@@ -206,112 +213,112 @@
 /* Height part of the resolution */
 
 @media (min-device-height: 240px) {
-    #height {
+    #height::after {
         content: url("track.php?height=240");
     }
 }
 
 
 @media (min-device-height: 320px) {
-    #height {
+    #height::after {
         content: url("track.php?height=320");
     }
 }
 
 @media (min-device-height: 360px) {
-    #height {
+    #height::after {
         content: url("track.php?height=360");
     }
 }
 
 @media (min-device-height: 480px) {
-    #height {
+    #height::after {
         content: url("track.php?height=480");
     }
 }
 
 @media (min-device-height: 504px) {
-    #height {
+    #height::after {
         content: url("track.php?height=504");
     }
 }
 
 @media (min-device-height: 540px) {
-    #height {
+    #height::after {
         content: url("track.php?height=540");
     }
 }
 
 @media (min-device-height: 568px) {
-    #height {
+    #height::after {
         content: url("track.php?height=568");
     }
 }
 
 @media (min-device-height: 576px) {
-    #height {
+    #height::after {
         content: url("track.php?height=576");
     }
 }
 
 @media (min-device-height: 600px) {
-    #height {
+    #height::after {
         content: url("track.php?height=600");
     }
 }
 
 @media (min-device-height: 640px) {
-    #height {
+    #height::after {
         content: url("track.php?height=640");
     }
 }
 
 @media (min-device-height: 667px) {
-    #height {
+    #height::after {
         content: url("track.php?height=667");
     }
 }
 
 @media (min-device-height: 690px) {
-    #height {
+    #height::after {
         content: url("track.php?height=690");
     }
 }
 
 @media (min-device-height: 720px) {
-    #height {
+    #height::after {
         content: url("track.php?height=720");
     }
 }
 
 @media (min-device-height: 768px) {
-    #height{
+    #height::after {
         content: url("track.php?height=768");
     }
 }
 
 @media (min-device-height: 1024px) {
-    #height {
+    #height::after {
         content: url("track.php?height=1024");
     }
 }
 
 @media (min-device-height: 1080px) {
-    #height {
+    #height::after {
         content: url("track.php?height=1080");
     }
 }
 
+@media (min-device-height: 1366px) {
+    #height::after {
+        content: url("track.php?height=1366");
+    }
+}
+
 @media (min-device-height: 2160px) {
-    #height {
+    #height::after {
         content: url("track.php?height=2160");
     }
 }
 
-
-@media (min-device-height: 1366px) {
-    #height {
-        content: url("track.php?height=1366");
-    }
-}
 

@@ -48,6 +48,9 @@ switch($action)
     case "browser_firefox":
         $_SESSION["browser_firefox"] = true;
         break;
+    case "browser_edge":
+        $_SESSION["browser_edge"] = true;
+        break;
     case "font1":
         $_SESSION["font1"] = false;
         break;
@@ -57,7 +60,6 @@ switch($action)
     case "checkbox":
         $_SESSION["checkbox"] = date(DATE_RFC822);
         break;
-
     case "reset":
         session_unset();
         print("Results were cleared!");
