@@ -86,7 +86,7 @@ Then, we define that the keyframes should be used as animation for the `div`. Th
 }
 ```
 
-The resolution of the duration measurement can be increased, by insert more steps into the keyframes set.
+The resolution of the duration measurement can be increased, by inserting more steps into the keyframes set.
 
 ### Input detection
 
