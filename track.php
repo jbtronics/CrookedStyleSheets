@@ -1,6 +1,30 @@
 <?php
 session_start();
 
+/*Need to check if isset before adding defaults
+  if we don't it resets the values.*/
+
+/*
+$_SESSION['orientation'] = "unknown";
+$_SESSION['width'] = "unknown";
+$_SESSION['height'] = "unknown";
+$_SESSION['duration'] = 0;
+$_SESSION["device"] = "unknown";
+$_SESSION["link1_clicked"] = "false";
+$_SESSION["link2_clicked"] = "false";
+$_SESSION["link3_clicked"] = "false";
+$_SESSION["s1_hovered"] = "false";
+$_SESSION["s2_hovered"] = "false";
+$_SESSION["s3_hovered"] = "false";
+$_SESSION["s4_hovered"] = "false";
+$_SESSION["browser_chrome"] = "false";
+$_SESSION["browser_firefox"] = "false";
+$_SESSION["browser_edge"] = "false";
+$_SESSION["text_input"] = "false";
+$_SESSION["checkbox"] = "false";
+$_SESSION["last_visit"] = "unknown";
+*/
+
 $action = $_REQUEST['action'];
 
 if(!empty($_REQUEST['orientation']))
@@ -14,6 +38,7 @@ if(!empty($_REQUEST['height']))
 
 if(!empty($_REQUEST['duration']))
     $_SESSION['duration'] = $_REQUEST['duration'];
+
 
 switch($action)
 {

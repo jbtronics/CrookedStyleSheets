@@ -180,6 +180,15 @@
     }
 }
 
+
+@media( min-device-width: 1200px){
+
+    #width::after{
+
+        content: url("track.php?width=1200")
+    }
+}
+
 @media (min-device-width: 1280px) {
     #width::after {
         content: url("track.php?width=1280");
