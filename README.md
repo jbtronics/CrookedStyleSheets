@@ -111,17 +111,21 @@ For detection of the string "test" we combine the HTML `pattern` attribute, whic
 }
 ```
 
-## Demo
+## Demo (currently unavailable)
 
-[Here](http://crookedss.bplaced.net/) you can find a demo of the files in this repository. The `index.html` is the file that is being tracked using this method. Visit the `results.php` for the results of the tracking.
+*[Here](http://crookedss.bplaced.net/) you can find a demo of the files in this repository. The `index.html` is the file that is being tracked using this method. Visit the `results.php` for the results of the tracking.*
 
-If nothing or a PHP warning appears after a property, it means that the value of this property is false, or that the user has not visited the page or link yet (yeah, it's a bit dirty, but you can see the principle of the method).
+*If nothing or a PHP warning appears after a property, it means that the value of this property is false, or that the user has not visited the page or link yet (yeah, it's a bit dirty, but you can see the principle of the method).*
 
-Also, resolution detection doesn't work so well yet, because I only have detection for the most used screen widths. Further, it is a bit tricky to detect the real screen height of the user, because CSS uses the height of the browser window and stuff like the system panel/task bar makes the browser area smaller than the monitor.
+*Also, resolution detection doesn't work so well yet, because I only have detection for the most used screen widths. Further, it is a bit tricky to detect the real screen height of the user, because CSS uses the height of the browser window and stuff like the system panel/task bar makes the browser area smaller than the monitor.*
+
+**The demo website is currently unavailable.**
 
 ## What you can do to prevent tracking with this method
 
-The only way that is known to me currently, is to disable CSS for a web page completely (you can do this with a plugin like [uMatrix](https://github.com/gorhill/uMatrix)). The problem is that almost every modern web page looks very ugly without CSS and is sometimes even unusable. So, disabling CSS is not a real option, except when you are very worried about your privacy (for example, when you are using the Tor browser, you should maybe disable CSS).
+[CSS Exfil Protection](https://www.mike-gualtieri.com/posts/stealing-data-with-css-attack-and-defense) is an extension that protects against this vulnerability.
+
+Another way is to disable CSS for a web page completely, you can do this via browser settings or with plugins like [uMatrix](https://github.com/gorhill/uMatrix) (currently unmaintained), [CSS Toggler](https://addons.mozilla.org/en-US/firefox/addon/css-toggler) (currently unmaintained), [Stylus](https://github.com/openstyles/stylus) or [uBlock](https://github.com/gorhill/uBlock). Disabling CSS will make almost every modern web page look very ugly and often unusable.
 
 A better solution would be if browsers didn't load the external content (referenced in CSS) when it´s needed, but when the site is loaded. Then it would be impossible to detect individual actions. This modification to content loading could be implemented by the browsers themselves, or maybe by a plugin (similar to [NoScript](https://noscript.net/) or uMatrix)
 
